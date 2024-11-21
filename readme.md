@@ -49,6 +49,6 @@ To log in to the application, you need to select one of the four predefined user
    git clone https://github.com/n00b0dyy/CyberPunk-Bank-App.git
    ```
 
-2. Navigate to the project folder:
+2. Navigate to the project folder
 
 3. Open index.html in your preferred browser
