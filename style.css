@@ -194,6 +194,7 @@ nav {
 
   .logo {
     height: 4.5rem;
+    margin-right: 5%;
   }
 
   .login__input {
@@ -246,320 +247,335 @@ nav {
     font-size: 1.6rem;
     margin-left: 0;
   }
-}
-
-@media (min-width: 1024px) {
-  h1 {
-    font-size: 9rem;
-    padding: 6rem;
-  }
-  q .logo {
-    height: 8.5rem;
+  .welcome {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-left: 1rem;
   }
 
-  .login__input {
-    width: 14rem;
-    font-size: 1.8rem;
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 9rem;
+      padding: 6rem;
+    }
+    q .logo {
+      height: 8.5rem;
+    }
+
+    .login__input {
+      width: 14rem;
+      font-size: 1.8rem;
+    }
+
+    .login__btn {
+      font-size: 2.4rem;
+    }
+    .app {
+      max-width: 120rem;
+    }
+
+    .balance__value {
+      font-size: 5rem;
+    }
+
+    .movements__row {
+      padding: 2.5rem 5rem;
+    }
+
+    .movements__value {
+      font-size: 2rem;
+    }
+    .summary {
+      margin-top: 2rem;
+    }
+
+    .summary__value {
+      font-size: 2.5rem;
+    }
+
+    .operation {
+      padding: 3.5rem 5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .form__btn {
+      font-size: 2rem;
+    }
+
+    .logout-timer {
+      font-size: 1.5rem;
+    }
   }
 
-  .login__btn {
-    font-size: 2.4rem;
-  }
+  /* MAIN */
   .app {
-    max-width: 120rem;
+    position: relative;
+    max-width: 100rem;
+    margin: 4rem auto;
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: auto repeat(3, 15rem) auto;
+    gap: 2rem;
+
+    /* NOTE This creates the fade in/out anumation */
+    opacity: 0;
+    transition: all 1s;
+  }
+
+  .balance {
+    grid-column: 1 / span 2;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .balance__label {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: -0.2rem;
+    margin-left: 450px;
+  }
+
+  .balance__date {
+    font-size: 1.4rem;
+    color: #000000;
   }
 
   .balance__value {
-    font-size: 5rem;
+    font-size: 6.5rem;
+    font-weight: 900;
+    font-family: 'CyberFont', sans-serif;
+    color: #840d9c;
+    letter-spacing: 15px;
+    text-shadow: 0 0 20px #ffdb11, 0 0 40px #ff4500, 0 0 80px #ff6347,
+      0 0 120px #f4f000, 0 0 200px #b41616;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+  }
+
+  .balance__value:hover {
+    transform: scale(1.3);
+  }
+  /* MOVEMENTS */
+  .movements {
+    grid-row: 2 / span 3;
+    background-color: #02b671;
+    border-radius: 10%;
+    overflow: scroll;
+    box-shadow: 0 0 30px 10px #9400d3;
   }
 
   .movements__row {
-    padding: 2.5rem 5rem;
+    padding: 2.25rem 4rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+  }
+
+  .movements__type {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #bd00ff;
+
+    padding: 0.1rem 1rem;
+    border-radius: 10rem;
+    margin-right: 2rem;
+  }
+
+  .movements__date {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #666;
+  }
+
+  .movements__type--deposit {
+    color: #000000;
+    text-shadow: 0 0 10px #036c03, 0 0 20px #025502, 0 0 40px #009900,
+      0 0 80px #006600, 0 0 120px #004d00;
+  }
+
+  .movements__type--withdrawal {
+    color: #000000;
+    text-shadow: 0 0 5px #ffff00, 0 0 15px #ffff00, 0 0 30px #ffeb3b,
+      0 0 50px #cddc39, 0 0 80px #8bc34a;
   }
 
   .movements__value {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-left: auto;
+    color: #000000;
+    text-shadow: 0 0 20px #8c00d2, 0 0 40px #ff4500, 0 0 80px #ff6347,
+      0 0 120px #f4f000, 0 0 200px #b41616;
+    font-weight: bold;
   }
+
+  /* SUMMARY */
   .summary {
-    margin-top: 2rem;
+    grid-row: 5 / 6;
+    display: flex;
+    align-items: baseline;
+    padding: 0 0.3rem;
+    margin-top: 1rem;
+  }
+
+  .summary__label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-right: 0.8rem;
+    color: black;
   }
 
   .summary__value {
-    font-size: 2.5rem;
+    margin-right: 2.5rem;
+    font-size: 3.5rem;
+    font-family: 'CyberFont', sans-serif;
+    color: #9400d3;
+    letter-spacing: 7px;
+    text-shadow: 0 0 20px #ffdb11, 0 0 40px #ff4500, 0 0 80px #ff6347,
+      0 0 120px #f4f000, 0 0 200px #b41616;
+    text-transform: uppercase;
   }
 
+  .summary__value--in,
+  .summary__value--interest,
+  .summary__value--out {
+    color: #840d9c;
+    transition: transform 0.3s ease;
+    font-weight: bold;
+  }
+
+  .summary__value--in:hover,
+  .summary__value--interest:hover,
+  .summary__value--out:hover {
+    transform: scale(1.3);
+  }
+
+  .btn--sort {
+    margin-left: auto;
+    border: none;
+    background: none;
+    font-size: 1.3rem;
+    background-color: #001eff;
+    color: #00ff9f;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ffdb11, 0 0 40px #ff4500, 0 0 80px #ff6347,
+      0 0 120px #f4f000, 0 0 200px #b41616;
+    padding: 1rem 1rem;
+    border-radius: 10px;
+  }
+
+  /* OPERATIONS */
   .operation {
-    padding: 3.5rem 5rem;
+    border-radius: 1rem;
+    padding: 3rem 4rem;
+    color: #333;
+  }
+
+  .operation--transfer {
+    border-radius: 10%;
+    box-shadow: 0 0 30px 10px #9400d3;
+  }
+
+  .operation--loan {
+    border-radius: 10%;
+    box-shadow: 0 0 30px 10px #9400d3;
+  }
+
+  .operation--close {
+    border-radius: 10%;
+    box-shadow: 0 0 30px 10px #9400d3;
   }
 
   h2 {
-    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: 600;
+
+    color: #020202;
+    text-shadow: 0 0 10px #ffff00, 0 0 20px #ff9900, 0 0 40px #ff4500,
+      0 0 80px #ff0000, 0 0 120px #cc0000, 0 0 200px #de7f03;
+  }
+
+  .form {
+    display: grid;
+    grid-template-columns: 2.5fr 2.5fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.4rem 1rem;
+    font-weight: bold;
+  }
+
+  /* Exceptions for interst */
+  .form.form--loan {
+    grid-template-columns: 2.5fr 1fr 2.5fr;
+  }
+  .form__label--loan {
+    grid-row: 2;
+    font-weight: bold;
+  }
+  /* End exceptions */
+
+  .form__input {
+    width: 100%;
+    border: none;
+
+    background-color: #ffffff;
+    color: #000000;
+    font-family: inherit;
+    font-size: 1.5rem;
+    text-align: center;
+
+    padding: 0.3rem 1rem;
+    border-radius: 0.7rem;
+    transition: all 0.3s;
+  }
+
+  .form__input:focus {
+    outline: none;
+
+    background-color: rgba(106, 255, 233, 0.6);
+  }
+
+  .form__label {
+    font-size: 1.3rem;
+    text-align: center;
+    color: black;
   }
 
   .form__btn {
-    font-size: 2rem;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1.8rem;
+    background-color: #001eff;
+    color: #00ff9f;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 0 20px #ffdb11, 0 0 40px #ff4500, 0 0 80px #ff6347,
+      0 0 120px #f4f000, 0 0 200px #b41616;
+  }
+
+  .form__btn:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #ffdb11, 0 0 60px #ff4500, 0 0 120px #ff6347,
+      0 0 180px #f4f000, 0 0 250px #b41616;
   }
 
   .logout-timer {
-    font-size: 1.5rem;
+    padding: 0 0.3rem;
+    margin-top: 1.9rem;
+    text-align: right;
+    font-size: 1.25rem;
+    color: #bd00ff;
   }
-}
 
-/* MAIN */
-.app {
-  position: relative;
-  max-width: 100rem;
-  margin: 4rem auto;
-  display: grid;
-  grid-template-columns: 4fr 3fr;
-  grid-template-rows: auto repeat(3, 15rem) auto;
-  gap: 2rem;
-
-  /* NOTE This creates the fade in/out anumation */
-  opacity: 0;
-  transition: all 1s;
-}
-
-.balance {
-  grid-column: 1 / span 2;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-
-.balance__label {
-  font-size: 2.2rem;
-  font-weight: 500;
-  margin-bottom: -0.2rem;
-}
-
-.balance__date {
-  font-size: 1.4rem;
-  color: #000000;
-}
-
-.balance__value {
-  font-size: 6.5rem;
-  font-weight: 900;
-  font-family: 'CyberFont', sans-serif;
-  color: #9400d3;
-  letter-spacing: 15px;
-  text-shadow: 0 0 20px #ffdb11, 0 0 40px #ff4500, 0 0 80px #ff6347,
-    0 0 120px #f4f000, 0 0 200px #b41616;
-  text-transform: uppercase;
-}
-
-/* MOVEMENTS */
-.movements {
-  grid-row: 2 / span 3;
-  background-color: #02b671;
-  border-radius: 10%;
-  overflow: scroll;
-  box-shadow: 0 0 30px 10px #9400d3;
-}
-
-.movements__row {
-  padding: 2.25rem 4rem;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #eee;
-}
-
-.movements__type {
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #bd00ff;
-
-  padding: 0.1rem 1rem;
-  border-radius: 10rem;
-  margin-right: 2rem;
-}
-
-.movements__date {
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  color: #666;
-}
-
-.movements__type--deposit {
-  color: #000000;
-  text-shadow: 0 0 10px #036c03, 0 0 20px #025502, 0 0 40px #009900,
-    0 0 80px #006600, 0 0 120px #004d00;
-}
-
-.movements__type--withdrawal {
-  color: #000000;
-  text-shadow: 0 0 5px #ffff00, 0 0 15px #ffff00, 0 0 30px #ffeb3b,
-    0 0 50px #cddc39, 0 0 80px #8bc34a;
-}
-
-.movements__value {
-  font-size: 1.8rem;
-  margin-left: auto;
-  color: #000000;
-  text-shadow: 0 0 20px #8c00d2, 0 0 40px #ff4500, 0 0 80px #ff6347,
-    0 0 120px #f4f000, 0 0 200px #b41616;
-  font-weight: bold;
-}
-
-/* SUMMARY */
-.summary {
-  grid-row: 5 / 6;
-  display: flex;
-  align-items: baseline;
-  padding: 0 0.3rem;
-  margin-top: 1rem;
-}
-
-.summary__label {
-  font-size: 1.6rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  margin-right: 0.8rem;
-  color: black;
-}
-
-.summary__value {
-  margin-right: 2.5rem;
-  font-size: 3.5rem;
-  font-family: 'CyberFont', sans-serif;
-  color: #9400d3;
-  letter-spacing: 7px;
-  text-shadow: 0 0 20px #ffdb11, 0 0 40px #ff4500, 0 0 80px #ff6347,
-    0 0 120px #f4f000, 0 0 200px #b41616;
-  text-transform: uppercase;
-}
-
-.summary__value--in,
-.summary__value--interest {
-  color: #d600ff;
-}
-
-.summary__value--out {
-  color: #d600ff;
-}
-
-.btn--sort {
-  margin-left: auto;
-  border: none;
-  background: none;
-  font-size: 1.3rem;
-  background-color: #001eff;
-  color: #00ff9f;
-  font-weight: 500;
-  cursor: pointer;
-  box-shadow: 0 0 20px #ffdb11, 0 0 40px #ff4500, 0 0 80px #ff6347,
-    0 0 120px #f4f000, 0 0 200px #b41616;
-  padding: 1rem 1rem;
-  border-radius: 10px;
-}
-
-/* OPERATIONS */
-.operation {
-  border-radius: 1rem;
-  padding: 3rem 4rem;
-  color: #333;
-}
-
-.operation--transfer {
-  border-radius: 10%;
-  box-shadow: 0 0 30px 10px #9400d3;
-}
-
-.operation--loan {
-  border-radius: 10%;
-  box-shadow: 0 0 30px 10px #9400d3;
-}
-
-.operation--close {
-  border-radius: 10%;
-  box-shadow: 0 0 30px 10px #9400d3;
-}
-
-h2 {
-  margin-bottom: 1.5rem;
-  font-size: 1.7rem;
-  font-weight: 600;
-
-  color: #020202;
-  text-shadow: 0 0 10px #ffff00, 0 0 20px #ff9900, 0 0 40px #ff4500,
-    0 0 80px #ff0000, 0 0 120px #cc0000, 0 0 200px #de7f03;
-}
-
-.form {
-  display: grid;
-  grid-template-columns: 2.5fr 2.5fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 0.4rem 1rem;
-  font-weight: bold;
-}
-
-/* Exceptions for interst */
-.form.form--loan {
-  grid-template-columns: 2.5fr 1fr 2.5fr;
-}
-.form__label--loan {
-  grid-row: 2;
-  font-weight: bold;
-}
-/* End exceptions */
-
-.form__input {
-  width: 100%;
-  border: none;
-
-  background-color: #ffffff;
-  color: #000000;
-  font-family: inherit;
-  font-size: 1.5rem;
-  text-align: center;
-
-  padding: 0.3rem 1rem;
-  border-radius: 0.7rem;
-  transition: all 0.3s;
-}
-
-.form__input:focus {
-  outline: none;
-
-  background-color: rgba(106, 255, 233, 0.6);
-}
-
-.form__label {
-  font-size: 1.3rem;
-  text-align: center;
-  color: black;
-}
-
-.form__btn {
-  border: none;
-  border-radius: 0.7rem;
-  font-size: 1.8rem;
-  background-color: #001eff;
-  color: #00ff9f;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 0 20px #ffdb11, 0 0 40px #ff4500, 0 0 80px #ff6347,
-    0 0 120px #f4f000, 0 0 200px #b41616;
-}
-
-.form__btn:focus {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #ffdb11, 0 0 60px #ff4500, 0 0 120px #ff6347,
-    0 0 180px #f4f000, 0 0 250px #b41616;
-}
-
-.logout-timer {
-  padding: 0 0.3rem;
-  margin-top: 1.9rem;
-  text-align: right;
-  font-size: 1.25rem;
-  color: #bd00ff;
-}
-
-.timer {
-  font-weight: 600;
+  .timer {
+    font-weight: 600;
+  }
 }
